@@ -9,7 +9,7 @@ app.use(express.json());
 
 
 app.use(cors({
-    origin: 'http://localhost:5173'
+    origin: process.env.FRONTEND_URL || 'http://localhost:5173'
 }));
 
 const pool = new Pool({
@@ -98,7 +98,4 @@ app.delete("/bookings/:id", async (req, res) => {
     }
 });
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
-});
+module.exports = app;
