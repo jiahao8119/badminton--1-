@@ -9,7 +9,7 @@ app.use(express.json());
 
 
 app.use(cors({
-    origin: ['https://final-fullstack-vert.vercel.app', 'http://localhost:5173'],
+    origin: ['https://final-fullstack-vert.vercel.app'],
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true
