@@ -9,7 +9,10 @@ app.use(express.json());
 
 
 app.use(cors({
-    origin: process.env.FRONTEND_URL || 'http://localhost:5173'
+    origin: ['https://final-fullstack-vert.vercel.app', 'http://localhost:5173'],
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true
 }));
 
 const pool = new Pool({
